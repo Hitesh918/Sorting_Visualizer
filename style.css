@@ -1,0 +1,37 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    background-color: #F1F6F9;
+
+}
+
+.container{
+    padding: 0% 8%;
+}
+
+.head{
+    background-color:#0A4D68;
+    color: #F1F6F9;
+    width: 100%;
+    font-size: 4rem;
+    height: 200px;
+}
+
+.arr{
+    /* display: inline-block; */
+    width: 1144px;
+    /* height: 440px; */
+    text-align: center;
+    /* overflow-y: hidden; */
+
+
+
+}
+
+.bar {
+    display: inline-block;
+    /* width: 0.64%; */
+    height: 100px;
+    margin: 0px 2px 0px 2px;
+}
+
