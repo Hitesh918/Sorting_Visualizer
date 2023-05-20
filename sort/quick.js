@@ -1,7 +1,4 @@
-
-import swap from "../script.js"
-
-export default function quickSort(arr) {
+function quickSort(arr) {
     let start=0
     let end=arr.length -1
     sorter(arr , start , end)

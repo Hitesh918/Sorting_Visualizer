@@ -1,38 +1,27 @@
-
-import swap from "../script.js"
-
-
-
-export default async function selectionSort(arr) {
+async function selectionSort() {
     let n = arr.length
     for (let i = 0; i < n - 1; i++) {
-        let least = i                  //least is the iindex of smallest element
-        const r3 = await swap(least, 0, 100)
-
+        let least = i
+        changeColor(i, "#183153")
         for (let j = i + 1; j < n; j++) {
-            const q = await swap(i, j, 5)
+            await changeColor(j, "#FFD401")
             if (arr[j] < arr[least]) {
-                const r1 = await swap(least, 1, 100)
+                changeColor(least, "#62CDFF")
+                changeColor(i, "#183153")
+                changeColor(j, "#183153")
                 least = j
-                const r = await swap(least, 0, 100)
+            }
+            else {
+                await changeColor(j, "#62CDFF")
             }
         }
-
-        const x = await swap(i, least)
+        await swap(i, least , "#00FFCA")
         let temp = arr[i]
         arr[i] = arr[least]
         arr[least] = temp
-        const r2 = await swap(least, 1, 100)
-        // let p1 = new Promise((resolve, reject) => {
-        //     swap(i, least)
-        //     p1.resolve("done")
-        // })
-
-        // p1.then(() => {
-        //     let temp = arr[i]
-        //     arr[i] = arr[least]
-        //     arr[least] = temp
-        // })
-
+        if (i != least) {
+            changeColor(least, "#62CDFF")
+        }
     }
+    changeColor(elemarr.length - 1, "#00FFCA")
 }

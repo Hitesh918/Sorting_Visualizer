@@ -1,7 +1,4 @@
-
-import swap from "../script.js"
-
-export default function mergeSort(arr) {
+function mergeSort(arr) {
     let l = 0
     let r = (arr.length) - 1
     sorter(l, r, arr)
