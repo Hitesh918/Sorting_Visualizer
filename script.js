@@ -19,8 +19,6 @@ document.body.onload = () => {
     newArray()
 }
 
-
-
 //function to generate new array
 function newArray() {
     // console.log("this is bw" +bw)
@@ -58,23 +56,27 @@ function randomNumber(min, max) {
 }
 
 
+
 document.getElementsByClassName("new_array")[0].addEventListener("click", () => {
     newArray();
 })
 
 // //Animations
-function swap(a, b , color) {
+function swap(a, b , color1 , color2) {
     return new Promise(resolve => {
         let temp = elemarr[a].style.height
         elemarr[a].style.height = elemarr[b].style.height
         setTimeout(() => {
             elemarr[b].style.height = temp
-            elemarr[a].style.backgroundColor = color
+            elemarr[a].style.backgroundColor = color1
             if (b == a) {
-                elemarr[b].style.backgroundColor = color
+                elemarr[b].style.backgroundColor = color1
+            }
+            if(color2!=null){
+                elemarr[b].style.backgroundColor = color2
             }
             resolve('resolved');
-        }, 5);
+        }, 70);
     });
 }
 
@@ -83,7 +85,16 @@ function changeColor(a, color) {
         setTimeout(() => {
                 elemarr[a].style.backgroundColor = color
             resolve('resolved');
-        }, 5);
+        }, 70);
+    });
+}
+
+function changeHeight(a, height){
+    return new Promise(resolve => {
+        setTimeout(() => {
+                elemarr[a].style.height =height
+            resolve('resolved');
+        }, 4);
     });
 }
 

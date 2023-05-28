@@ -22,12 +22,11 @@ async function bubbleSort() {
         }
         await changeColor(n - 1 - i, "#00FFCA")
         if (bool == true) {
-            for(let k= n-i ; k>=0 ; k--){
+            for(let k= n-i-1 ; k>=0 ; k--){
                 await changeColor(k,"#00FFCA")
             }
             return
         }
         await changeColor(0, "#00FFCA")
-        console.log("gvhbn")
     }
 }
