@@ -76,7 +76,7 @@ function swap(a, b , color1 , color2) {
                 elemarr[b].style.backgroundColor = color2
             }
             resolve('resolved');
-        }, 70);
+        }, 7);
     });
 }
 
@@ -85,7 +85,7 @@ function changeColor(a, color) {
         setTimeout(() => {
                 elemarr[a].style.backgroundColor = color
             resolve('resolved');
-        }, 70);
+        }, 7);
     });
 }
 
@@ -94,7 +94,7 @@ function changeHeight(a, height){
         setTimeout(() => {
                 elemarr[a].style.height =height
             resolve('resolved');
-        }, 4);
+        }, 7);
     });
 }
 

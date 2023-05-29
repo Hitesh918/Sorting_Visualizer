@@ -4,7 +4,6 @@ async function mergeSort() {
     let l = 0
     let r = (arr.length) - 1
     sort(l, r)
-    console.log(arr)
 }
 
 async function sort(l, r) {
