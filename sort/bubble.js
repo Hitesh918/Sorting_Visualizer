@@ -1,4 +1,5 @@
 async function bubbleSort() {
+    disabler()
     let n = arr.length
     for (let i = 0; i < n - 1; i++) {
         let bool = true
@@ -25,8 +26,10 @@ async function bubbleSort() {
             for(let k= n-i-1 ; k>=0 ; k--){
                 await changeColor(k,"#00FFCA")
             }
+            enabler()
             return
         }
         await changeColor(0, "#00FFCA")
     }
+    enabler()
 }

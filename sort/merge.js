@@ -1,9 +1,11 @@
 // let bool = false
 // let marr = []
 async function mergeSort() {
+    disabler()
     let l = 0
     let r = (arr.length) - 1
-    sort(l, r)
+    await sort(l, r)
+    enabler()
 }
 
 async function sort(l, r) {

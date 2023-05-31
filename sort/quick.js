@@ -1,8 +1,10 @@
 async function quickSort() {
+    disabler()
     let start = 0
     let end = arr.length - 1
     await sorter(start, end)
-    await changeColor(end, "green")
+    await changeColor(end, "#00FFCA")
+    enabler()
 }
 
 async function sorter(start, end) {
@@ -13,10 +15,10 @@ async function sorter(start, end) {
     }
     else {
         if (start >= 0) {
-            await changeColor(start, "green")
+            await changeColor(start, "#00FFCA")
         }
         if (end >= 0) {
-            await changeColor(end, "green")
+            await changeColor(end, "#00FFCA")
         }
         return
     }
@@ -46,9 +48,9 @@ async function partition(start, end) {
     let temp = arr[pindex]
     arr[pindex] = pivot
     arr[end] = temp
-    await swap(pindex, end, "green", "#62CDFF")
-    if (elemarr[pindex].style.backgroundColor != "green") {
-        await changeColor(pindex, "green")
+    await swap(pindex, end, "#00FFCA", "#62CDFF")
+    if (elemarr[pindex].style.backgroundColor != "#00FFCA") {
+        await changeColor(pindex, "#00FFCA")
     }
     return pindex
 }

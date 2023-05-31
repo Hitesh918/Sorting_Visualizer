@@ -1,4 +1,5 @@
 async function selectionSort() {
+    disabler()
     let n = arr.length
     for (let i = 0; i < n - 1; i++) {
         let least = i
@@ -24,4 +25,5 @@ async function selectionSort() {
         }
     }
     changeColor(elemarr.length - 1, "#00FFCA")
+    enabler()
 }

@@ -1,4 +1,5 @@
 async function insertionSort() {
+    disabler()
     let n = arr.length
     await changeColor(0, "green")
     for (let i = 1; i < n; i++) {
@@ -14,4 +15,5 @@ async function insertionSort() {
         }
         await changeColor(k + 1, "green")
     }
+    enabler()
 }

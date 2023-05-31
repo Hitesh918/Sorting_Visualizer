@@ -61,8 +61,22 @@ document.getElementsByClassName("new_array")[0].addEventListener("click", () => 
     newArray();
 })
 
+let btnArray = document.getElementsByClassName("btn")
+
+function disabler() {
+    
+    for (let i = 0; i < btnArray.length; i++) {
+        btnArray[i].disabled = true
+    }
+}
+function enabler() {
+    for (let i = 0; i < btnArray.length; i++) {
+        btnArray[i].disabled = false
+    }
+}
+
 // //Animations
-function swap(a, b , color1 , color2) {
+function swap(a, b, color1, color2) {
     return new Promise(resolve => {
         let temp = elemarr[a].style.height
         elemarr[a].style.height = elemarr[b].style.height
@@ -72,7 +86,7 @@ function swap(a, b , color1 , color2) {
             if (b == a) {
                 elemarr[b].style.backgroundColor = color1
             }
-            if(color2!=null){
+            if (color2 != null) {
                 elemarr[b].style.backgroundColor = color2
             }
             resolve('resolved');
@@ -83,16 +97,18 @@ function swap(a, b , color1 , color2) {
 function changeColor(a, color) {
     return new Promise(resolve => {
         setTimeout(() => {
+            if (a >= 0 && a <= elemarr.length - 1) {
                 elemarr[a].style.backgroundColor = color
+            }
             resolve('resolved');
         }, 7);
     });
 }
 
-function changeHeight(a, height){
+function changeHeight(a, height) {
     return new Promise(resolve => {
         setTimeout(() => {
-                elemarr[a].style.height =height
+            elemarr[a].style.height = height
             resolve('resolved');
         }, 7);
     });
