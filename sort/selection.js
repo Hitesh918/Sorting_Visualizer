@@ -3,13 +3,13 @@ async function selectionSort() {
     let n = arr.length
     for (let i = 0; i < n - 1; i++) {
         let least = i
-        changeColor(i, "#183153")
+        await changeColor(i, "#183153")
         for (let j = i + 1; j < n; j++) {
             await changeColor(j, "#FFD401")
             if (arr[j] < arr[least]) {
-                changeColor(least, "#62CDFF")
-                changeColor(i, "#183153")
-                changeColor(j, "#183153")
+                await changeColor(least, "#62CDFF")
+                await changeColor(i, "#183153")
+                await changeColor(j, "#183153")
                 least = j
             }
             else {
@@ -21,9 +21,9 @@ async function selectionSort() {
         arr[i] = arr[least]
         arr[least] = temp
         if (i != least) {
-            changeColor(least, "#62CDFF")
+            await changeColor(least, "#62CDFF")
         }
     }
-    changeColor(elemarr.length - 1, "#00FFCA")
+    await changeColor(elemarr.length - 1, "#00FFCA")
     enabler()
 }

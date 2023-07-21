@@ -1,10 +1,20 @@
-let slider = document.getElementsByClassName("barWidth")[0]
-let bw = slider.value
-slider.addEventListener("input", () => {
-    bw = slider.value
+let slider1 = document.getElementsByClassName("barWidth")[0]
+let bw = slider1.value
+slider1.addEventListener("input", () => {
+    bw = slider1.value
     // console.log("container width is" + document.body.getElementsByClassName("arr")[0].offsetWidth)
     newArray()
 })
+
+let speedArr=[800 , 100 , 50 , 10 , 4]
+
+let slider2 = document.getElementsByClassName("speed")[0]
+// let time = slider2.value
+let delay =speedArr[slider2.value]
+slider2.addEventListener("input" , ()=>{
+    delay =speedArr[slider2.value]
+})
+
 
 let arr = []
 let elemarr = []
@@ -56,7 +66,6 @@ function randomNumber(min, max) {
 }
 
 
-
 document.getElementsByClassName("new_array")[0].addEventListener("click", () => {
     newArray();
 })
@@ -90,27 +99,27 @@ function swap(a, b, color1, color2) {
                 elemarr[b].style.backgroundColor = color2
             }
             resolve('resolved');
-        }, 7);
+        }, delay);
     });
 }
 
-function changeColor(a, color) {
+function changeColor(a, color ) {
     return new Promise(resolve => {
         setTimeout(() => {
             if (a >= 0 && a <= elemarr.length - 1) {
                 elemarr[a].style.backgroundColor = color
             }
             resolve('resolved');
-        }, 7);
+        }, delay);
     });
 }
 
-function changeHeight(a, height) {
+function changeHeight(a, height ) {
     return new Promise(resolve => {
         setTimeout(() => {
             elemarr[a].style.height = height
             resolve('resolved');
-        }, 7);
+        }, delay);
     });
 }
 

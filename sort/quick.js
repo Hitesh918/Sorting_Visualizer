@@ -37,9 +37,9 @@ async function partition(start, end) {
             let temp = arr[i]
             arr[i] = arr[pindex]
             arr[pindex] = temp
-            swap(i, pindex, "#62CDFF", "#62CDFF")
+            await swap(i, pindex, "#62CDFF", "#62CDFF")
             pindex++
-            changeColor(pindex, "black")
+            await changeColor(pindex, "black")
         }
         if (elemarr[i].style.backgroundColor != "black") {
             await changeColor(i, "#62CDFF")
